@@ -1,0 +1,35 @@
+---
+interface Props {
+    title: String;
+
+    //Parametro por defecto
+    description?: String;
+}
+
+const {title, description = 'por defecto'} = Astro.props;
+---
+
+<div class="card">
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <span>omarduran1989@hotmail.com</span>
+</div>
+
+<style>
+    .card{
+        display: inline-block;
+        margin: 10px 20px 10px 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: grey;
+        min-height: 140px;
+    }
+
+    span{
+        font-weight: bold;
+        font-size: 12px;
+    }
+</style>

@@ -1,0 +1,60 @@
+---
+//Importamos el componente header
+import Header from "../components/Header.astro";
+
+//Esto solo se vera en la consola del servidor.
+console.log("Hello Astro");
+
+const ingredients = ['Harina', 'Azucar', 'Sal'];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <article>
+      <Header/>
+      <section class="IntroWrapper">
+        <p class="IntroText">
+          Occasionally maligned and misunderstood; the scone is a
+          quintessentially British classic.
+        </p>
+        <figure class="MoneyShot">
+          <img
+            class="MoneyShotImg"
+            src="../src/images/scones.jpg"
+            alt="Incredible scones"
+          />
+          <figcaption class="ImageCaption">
+            Incredible scones, picture from Wikipedia
+          </figcaption>
+        </figure>
+      </section>
+      <p>Recipe and serving suggestions follow.</p>
+      <section class="Ingredients">
+        <h3 class="SubHeader">Ingredients</h3>
+		<ul >{ingredients.map(ingredient=> <li>{ingredient}</li>)}</ul>
+      </section>
+      <section class="HowToMake">
+        <h3 class="SubHeader">Method</h3>
+      </section>
+      <footer>
+        Made for the book,
+        <a href="https://rwd.education">
+          'Responsive Web Design with HTML5 and CSS3'
+        </a>
+        by
+        <address><a href="https://benfrain.com">Ben Frain</a></address>
+      </footer>
+    </article>
+  </body>
+</html>
+
+<style>
+	.MoneyShotImg{max-width: 100%;}
+</style>

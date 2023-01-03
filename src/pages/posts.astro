@@ -1,0 +1,20 @@
+---
+const URI = "https://jsonplaceholder.typicode.com/posts";
+
+//En Astro no es obligatorio usar el await
+const posts = await fetch(URI).then(data =>  data.json());
+---
+
+<h1>Practicando peticiones</h1>
+
+{
+posts.map((item) =>(
+    <div>
+        <h2>{item.title}</h2>
+        <h3>{item.userId}</h3>
+        <p>{item.body}</p>
+    </div>
+))
+}
+
+
